@@ -1,0 +1,435 @@
+
+lab6dig2.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00000254  00000308  2**0
+                  ALLOC, LOAD, DATA
+  1 .text         000000c8  00000000  00000000  000000b4  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      0000002f  00000000  00000000  00000308  2**0
+                  CONTENTS, READONLY
+  3 .stack.descriptors.hdr 0000000e  00000000  00000000  00000337  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000060  00000000  00000000  00000345  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000d82  00000000  00000000  000003a5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 0000079e  00000000  00000000  00001127  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   0000045f  00000000  00000000  000018c5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000000c8  00000000  00000000  00001d24  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000220  00000000  00000000  00001dec  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000020d  00000000  00000000  0000200c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000040  00000000  00000000  00002219  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .text         00000004  00000244  00000244  000002f8  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 13 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  0000225c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .text.__vector_3 0000007e  0000014e  0000014e  00000202  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 15 .text.__vector_4 00000038  000001cc  000001cc  00000280  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 16 .text.main    00000086  000000c8  000000c8  0000017c  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 17 .data.prevC   00000001  00800100  00000252  00000306  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+ 18 .data.prevB   00000001  00800101  00000253  00000307  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+ 19 .bss.key_to_send 00000001  00800102  00800102  00000308  2**0
+                  ALLOC
+ 20 .text.UART_init 0000001c  00000204  00000204  000002b8  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 21 .text.UART_sendChar 0000000e  00000236  00000236  000002ea  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 22 .text.__dummy_fini 00000002  0000024c  0000024c  00000300  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 23 .text.__dummy_funcs_on_exit 00000002  0000024e  0000024e  00000302  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 24 .text.__dummy_simulator_exit 00000002  00000250  00000250  00000304  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 25 .text.exit    00000016  00000220  00000220  000002d4  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 26 .text._Exit   00000004  00000248  00000248  000002fc  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 3a 00 	jmp	0x74	; 0x74 <__ctors_end>
+   4:	0c 94 22 01 	jmp	0x244	; 0x244 <__bad_interrupt>
+   8:	0c 94 22 01 	jmp	0x244	; 0x244 <__bad_interrupt>
+   c:	0c 94 a7 00 	jmp	0x14e	; 0x14e <__vector_3>
+  10:	0c 94 e6 00 	jmp	0x1cc	; 0x1cc <__vector_4>
+  14:	0c 94 22 01 	jmp	0x244	; 0x244 <__bad_interrupt>
+  18:	0c 94 22 01 	jmp	0x244	; 0x244 <__bad_interrupt>
+  1c:	0c 94 22 01 	jmp	0x244	; 0x244 <__bad_interrupt>
+  20:	0c 94 22 01 	jmp	0x244	; 0x244 <__bad_interrupt>
+  24:	0c 94 22 01 	jmp	0x244	; 0x244 <__bad_interrupt>
+  28:	0c 94 22 01 	jmp	0x244	; 0x244 <__bad_interrupt>
+  2c:	0c 94 22 01 	jmp	0x244	; 0x244 <__bad_interrupt>
+  30:	0c 94 22 01 	jmp	0x244	; 0x244 <__bad_interrupt>
+  34:	0c 94 22 01 	jmp	0x244	; 0x244 <__bad_interrupt>
+  38:	0c 94 22 01 	jmp	0x244	; 0x244 <__bad_interrupt>
+  3c:	0c 94 22 01 	jmp	0x244	; 0x244 <__bad_interrupt>
+  40:	0c 94 22 01 	jmp	0x244	; 0x244 <__bad_interrupt>
+  44:	0c 94 22 01 	jmp	0x244	; 0x244 <__bad_interrupt>
+  48:	0c 94 22 01 	jmp	0x244	; 0x244 <__bad_interrupt>
+  4c:	0c 94 22 01 	jmp	0x244	; 0x244 <__bad_interrupt>
+  50:	0c 94 22 01 	jmp	0x244	; 0x244 <__bad_interrupt>
+  54:	0c 94 22 01 	jmp	0x244	; 0x244 <__bad_interrupt>
+  58:	0c 94 22 01 	jmp	0x244	; 0x244 <__bad_interrupt>
+  5c:	0c 94 22 01 	jmp	0x244	; 0x244 <__bad_interrupt>
+  60:	0c 94 22 01 	jmp	0x244	; 0x244 <__bad_interrupt>
+  64:	0c 94 22 01 	jmp	0x244	; 0x244 <__bad_interrupt>
+
+00000068 <.dinit>:
+  68:	01 00       	.word	0x0001	; ????
+  6a:	01 02       	muls	r16, r17
+  6c:	00 02       	muls	r16, r16
+  6e:	52 01       	movw	r10, r4
+  70:	02 01       	movw	r0, r4
+  72:	03 80       	ldd	r0, Z+3	; 0x03
+
+00000074 <__ctors_end>:
+  74:	11 24       	eor	r1, r1
+  76:	1f be       	out	0x3f, r1	; 63
+  78:	cf ef       	ldi	r28, 0xFF	; 255
+  7a:	d8 e0       	ldi	r29, 0x08	; 8
+  7c:	de bf       	out	0x3e, r29	; 62
+  7e:	cd bf       	out	0x3d, r28	; 61
+
+00000080 <__do_copy_data>:
+  80:	e8 e6       	ldi	r30, 0x68	; 104
+  82:	f0 e0       	ldi	r31, 0x00	; 0
+  84:	40 e0       	ldi	r20, 0x00	; 0
+  86:	17 c0       	rjmp	.+46     	; 0xb6 <__do_clear_bss+0x8>
+  88:	b5 91       	lpm	r27, Z+
+  8a:	a5 91       	lpm	r26, Z+
+  8c:	35 91       	lpm	r19, Z+
+  8e:	25 91       	lpm	r18, Z+
+  90:	05 91       	lpm	r16, Z+
+  92:	07 fd       	sbrc	r16, 7
+  94:	0c c0       	rjmp	.+24     	; 0xae <__do_clear_bss>
+  96:	95 91       	lpm	r25, Z+
+  98:	85 91       	lpm	r24, Z+
+  9a:	ef 01       	movw	r28, r30
+  9c:	f9 2f       	mov	r31, r25
+  9e:	e8 2f       	mov	r30, r24
+  a0:	05 90       	lpm	r0, Z+
+  a2:	0d 92       	st	X+, r0
+  a4:	a2 17       	cp	r26, r18
+  a6:	b3 07       	cpc	r27, r19
+  a8:	d9 f7       	brne	.-10     	; 0xa0 <__do_copy_data+0x20>
+  aa:	fe 01       	movw	r30, r28
+  ac:	04 c0       	rjmp	.+8      	; 0xb6 <__do_clear_bss+0x8>
+
+000000ae <__do_clear_bss>:
+  ae:	1d 92       	st	X+, r1
+  b0:	a2 17       	cp	r26, r18
+  b2:	b3 07       	cpc	r27, r19
+  b4:	e1 f7       	brne	.-8      	; 0xae <__do_clear_bss>
+  b6:	e4 37       	cpi	r30, 0x74	; 116
+  b8:	f4 07       	cpc	r31, r20
+  ba:	31 f7       	brne	.-52     	; 0x88 <__do_copy_data+0x8>
+  bc:	0e 94 64 00 	call	0xc8	; 0xc8 <_etext>
+  c0:	0c 94 10 01 	jmp	0x220	; 0x220 <exit>
+
+000000c4 <_exit>:
+  c4:	f8 94       	cli
+
+000000c6 <__stop_program>:
+  c6:	ff cf       	rjmp	.-2      	; 0xc6 <__stop_program>
+
+Disassembly of section .text:
+
+00000244 <__bad_interrupt>:
+ 244:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
+
+Disassembly of section .text.__vector_3:
+
+0000014e <__vector_3>:
+volatile char key_to_send = 0;
+volatile uint8_t prevB = 0x1F; // <-- agregado
+volatile uint8_t prevC = 0x01; // <-- agregado
+
+// --- ISR para PB0–PB4 ---
+ISR(PCINT0_vect) {
+ 14e:	1f 92       	push	r1
+ 150:	0f 92       	push	r0
+ 152:	0f b6       	in	r0, 0x3f	; 63
+ 154:	0f 92       	push	r0
+ 156:	11 24       	eor	r1, r1
+ 158:	2f 93       	push	r18
+ 15a:	8f 93       	push	r24
+ 15c:	9f 93       	push	r25
+	uint8_t estadoB = PINB & 0x1F;
+ 15e:	93 b1       	in	r25, 0x03	; 3
+ 160:	29 2f       	mov	r18, r25
+ 162:	2f 71       	andi	r18, 0x1F	; 31
+	uint8_t cambioB = prevB ^ estadoB;
+ 164:	80 91 01 01 	lds	r24, 0x0101	; 0x800101 <prevB>
+ 168:	82 27       	eor	r24, r18
+
+	if ((cambioB & (1 << PB0)) && !(estadoB & (1 << PB0))) key_to_send = 'A';
+ 16a:	80 ff       	sbrs	r24, 0
+ 16c:	06 c0       	rjmp	.+12     	; 0x17a <__vector_3+0x2c>
+ 16e:	90 fd       	sbrc	r25, 0
+ 170:	04 c0       	rjmp	.+8      	; 0x17a <__vector_3+0x2c>
+ 172:	81 e4       	ldi	r24, 0x41	; 65
+ 174:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <key_to_send>
+ 178:	1f c0       	rjmp	.+62     	; 0x1b8 <__vector_3+0x6a>
+	else if ((cambioB & (1 << PB1)) && !(estadoB & (1 << PB1))) key_to_send = 'B';
+ 17a:	81 ff       	sbrs	r24, 1
+ 17c:	06 c0       	rjmp	.+12     	; 0x18a <__vector_3+0x3c>
+ 17e:	91 fd       	sbrc	r25, 1
+ 180:	04 c0       	rjmp	.+8      	; 0x18a <__vector_3+0x3c>
+ 182:	82 e4       	ldi	r24, 0x42	; 66
+ 184:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <key_to_send>
+ 188:	17 c0       	rjmp	.+46     	; 0x1b8 <__vector_3+0x6a>
+	else if ((cambioB & (1 << PB2)) && !(estadoB & (1 << PB2))) key_to_send = 'U';
+ 18a:	82 ff       	sbrs	r24, 2
+ 18c:	06 c0       	rjmp	.+12     	; 0x19a <__vector_3+0x4c>
+ 18e:	92 fd       	sbrc	r25, 2
+ 190:	04 c0       	rjmp	.+8      	; 0x19a <__vector_3+0x4c>
+ 192:	85 e5       	ldi	r24, 0x55	; 85
+ 194:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <key_to_send>
+ 198:	0f c0       	rjmp	.+30     	; 0x1b8 <__vector_3+0x6a>
+	else if ((cambioB & (1 << PB3)) && !(estadoB & (1 << PB3))) key_to_send = 'D';
+ 19a:	83 ff       	sbrs	r24, 3
+ 19c:	06 c0       	rjmp	.+12     	; 0x1aa <__vector_3+0x5c>
+ 19e:	93 fd       	sbrc	r25, 3
+ 1a0:	04 c0       	rjmp	.+8      	; 0x1aa <__vector_3+0x5c>
+ 1a2:	84 e4       	ldi	r24, 0x44	; 68
+ 1a4:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <key_to_send>
+ 1a8:	07 c0       	rjmp	.+14     	; 0x1b8 <__vector_3+0x6a>
+	else if ((cambioB & (1 << PB4)) && !(estadoB & (1 << PB4))) key_to_send = 'R';
+ 1aa:	84 ff       	sbrs	r24, 4
+ 1ac:	05 c0       	rjmp	.+10     	; 0x1b8 <__vector_3+0x6a>
+ 1ae:	94 fd       	sbrc	r25, 4
+ 1b0:	03 c0       	rjmp	.+6      	; 0x1b8 <__vector_3+0x6a>
+ 1b2:	82 e5       	ldi	r24, 0x52	; 82
+ 1b4:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <key_to_send>
+
+	prevB = estadoB;
+ 1b8:	20 93 01 01 	sts	0x0101, r18	; 0x800101 <prevB>
+}
+ 1bc:	9f 91       	pop	r25
+ 1be:	8f 91       	pop	r24
+ 1c0:	2f 91       	pop	r18
+ 1c2:	0f 90       	pop	r0
+ 1c4:	0f be       	out	0x3f, r0	; 63
+ 1c6:	0f 90       	pop	r0
+ 1c8:	1f 90       	pop	r1
+ 1ca:	18 95       	reti
+
+Disassembly of section .text.__vector_4:
+
+000001cc <__vector_4>:
+
+// --- ISR para PC0 (Izquierda) ---
+ISR(PCINT1_vect) {
+ 1cc:	1f 92       	push	r1
+ 1ce:	0f 92       	push	r0
+ 1d0:	0f b6       	in	r0, 0x3f	; 63
+ 1d2:	0f 92       	push	r0
+ 1d4:	11 24       	eor	r1, r1
+ 1d6:	8f 93       	push	r24
+ 1d8:	9f 93       	push	r25
+	uint8_t estadoC = PINC & 0x01;
+ 1da:	86 b1       	in	r24, 0x06	; 6
+ 1dc:	81 70       	andi	r24, 0x01	; 1
+	uint8_t cambioC = prevC ^ estadoC;
+ 1de:	90 91 00 01 	lds	r25, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 1e2:	98 27       	eor	r25, r24
+	if ((cambioC & (1 << PC0)) && !(estadoC & (1 << PC0))) key_to_send = 'L';
+ 1e4:	90 ff       	sbrs	r25, 0
+ 1e6:	05 c0       	rjmp	.+10     	; 0x1f2 <__vector_4+0x26>
+ 1e8:	81 11       	cpse	r24, r1
+ 1ea:	03 c0       	rjmp	.+6      	; 0x1f2 <__vector_4+0x26>
+ 1ec:	9c e4       	ldi	r25, 0x4C	; 76
+ 1ee:	90 93 02 01 	sts	0x0102, r25	; 0x800102 <key_to_send>
+	prevC = estadoC;
+ 1f2:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
+}
+ 1f6:	9f 91       	pop	r25
+ 1f8:	8f 91       	pop	r24
+ 1fa:	0f 90       	pop	r0
+ 1fc:	0f be       	out	0x3f, r0	; 63
+ 1fe:	0f 90       	pop	r0
+ 200:	1f 90       	pop	r1
+ 202:	18 95       	reti
+
+Disassembly of section .text.main:
+
+000000c8 <main>:
+
+int main(void) {
+	// Configuraciones de pins (igual que antes)
+	DDRB &= ~((1 << PB0) | (1 << PB1) | (1 << PB2) | (1 << PB3) | (1 << PB4));
+  c8:	84 b1       	in	r24, 0x04	; 4
+  ca:	80 7e       	andi	r24, 0xE0	; 224
+  cc:	84 b9       	out	0x04, r24	; 4
+	PORTB |= (1 << PB0) | (1 << PB1) | (1 << PB2) | (1 << PB3) | (1 << PB4);
+  ce:	85 b1       	in	r24, 0x05	; 5
+  d0:	8f 61       	ori	r24, 0x1F	; 31
+  d2:	85 b9       	out	0x05, r24	; 5
+	DDRC &= ~(1 << PC0);
+  d4:	87 b1       	in	r24, 0x07	; 7
+  d6:	8e 7f       	andi	r24, 0xFE	; 254
+  d8:	87 b9       	out	0x07, r24	; 7
+	PORTC |= (1 << PC0);
+  da:	88 b1       	in	r24, 0x08	; 8
+  dc:	81 60       	ori	r24, 0x01	; 1
+  de:	88 b9       	out	0x08, r24	; 8
+
+	// Habilita PCINTs (igual que antes)
+	PCICR |= (1 << PCIE0) | (1 << PCIE1);
+  e0:	e8 e6       	ldi	r30, 0x68	; 104
+  e2:	f0 e0       	ldi	r31, 0x00	; 0
+  e4:	80 81       	ld	r24, Z
+  e6:	83 60       	ori	r24, 0x03	; 3
+  e8:	80 83       	st	Z, r24
+	PCMSK0 |= (1<<PCINT0)|(1<<PCINT1)|(1<<PCINT2)|(1<<PCINT3)|(1<<PCINT4);
+  ea:	eb e6       	ldi	r30, 0x6B	; 107
+  ec:	f0 e0       	ldi	r31, 0x00	; 0
+  ee:	80 81       	ld	r24, Z
+  f0:	8f 61       	ori	r24, 0x1F	; 31
+  f2:	80 83       	st	Z, r24
+	PCMSK1 |= (1<<PCINT8);
+  f4:	ec e6       	ldi	r30, 0x6C	; 108
+  f6:	f0 e0       	ldi	r31, 0x00	; 0
+  f8:	80 81       	ld	r24, Z
+  fa:	81 60       	ori	r24, 0x01	; 1
+  fc:	80 83       	st	Z, r24
+
+	// UART init con UBRR calculado
+	UART_init((unsigned int)UBRR_VAL);
+  fe:	80 e1       	ldi	r24, 0x10	; 16
+ 100:	90 e0       	ldi	r25, 0x00	; 0
+ 102:	0e 94 02 01 	call	0x204	; 0x204 <UART_init>
+
+	sei();
+ 106:	78 94       	sei
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 108:	2f ef       	ldi	r18, 0xFF	; 255
+ 10a:	83 ec       	ldi	r24, 0xC3	; 195
+ 10c:	99 e0       	ldi	r25, 0x09	; 9
+ 10e:	21 50       	subi	r18, 0x01	; 1
+ 110:	80 40       	sbci	r24, 0x00	; 0
+ 112:	90 40       	sbci	r25, 0x00	; 0
+ 114:	e1 f7       	brne	.-8      	; 0x10e <main+0x46>
+ 116:	00 c0       	rjmp	.+0      	; 0x118 <main+0x50>
+ 118:	00 00       	nop
+
+	// Prueba básica: delay corto al inicio para abrir la terminal
+	_delay_ms(200);
+
+	while (1) {
+		if (key_to_send) {
+ 11a:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <key_to_send>
+ 11e:	88 23       	and	r24, r24
+ 120:	e1 f3       	breq	.-8      	; 0x11a <main+0x52>
+			UART_sendChar(key_to_send);
+ 122:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <key_to_send>
+ 126:	0e 94 1b 01 	call	0x236	; 0x236 <UART_sendChar>
+			// opcional: enviar salto de línea para que sea legible
+			UART_sendChar('\r');
+ 12a:	8d e0       	ldi	r24, 0x0D	; 13
+ 12c:	0e 94 1b 01 	call	0x236	; 0x236 <UART_sendChar>
+			UART_sendChar('\n');
+ 130:	8a e0       	ldi	r24, 0x0A	; 10
+ 132:	0e 94 1b 01 	call	0x236	; 0x236 <UART_sendChar>
+ 136:	2f ef       	ldi	r18, 0xFF	; 255
+ 138:	80 e7       	ldi	r24, 0x70	; 112
+ 13a:	92 e0       	ldi	r25, 0x02	; 2
+ 13c:	21 50       	subi	r18, 0x01	; 1
+ 13e:	80 40       	sbci	r24, 0x00	; 0
+ 140:	90 40       	sbci	r25, 0x00	; 0
+ 142:	e1 f7       	brne	.-8      	; 0x13c <main+0x74>
+ 144:	00 c0       	rjmp	.+0      	; 0x146 <main+0x7e>
+ 146:	00 00       	nop
+
+			// debounce y evita envíos duplicados
+			_delay_ms(50);
+			key_to_send = 0;
+ 148:	10 92 02 01 	sts	0x0102, r1	; 0x800102 <key_to_send>
+ 14c:	e6 cf       	rjmp	.-52     	; 0x11a <main+0x52>
+
+Disassembly of section .text.UART_init:
+
+00000204 <UART_init>:
+ */ 
+#include <avr/io.h>
+#include "uart.h"
+
+void UART_init(unsigned int ubrr) {
+	UCSR0A = (1 << U2X0); // habilitar doble velocidad
+ 204:	22 e0       	ldi	r18, 0x02	; 2
+ 206:	20 93 c0 00 	sts	0x00C0, r18	; 0x8000c0 <__TEXT_REGION_LENGTH__+0x7f80c0>
+	UBRR0H = (unsigned char)(ubrr >> 8);
+ 20a:	90 93 c5 00 	sts	0x00C5, r25	; 0x8000c5 <__TEXT_REGION_LENGTH__+0x7f80c5>
+	UBRR0L = (unsigned char)(ubrr);
+ 20e:	80 93 c4 00 	sts	0x00C4, r24	; 0x8000c4 <__TEXT_REGION_LENGTH__+0x7f80c4>
+	UCSR0B = (1 << TXEN0);                   // habilita TX
+ 212:	88 e0       	ldi	r24, 0x08	; 8
+ 214:	80 93 c1 00 	sts	0x00C1, r24	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7f80c1>
+	UCSR0C = (1 << UCSZ01) | (1 << UCSZ00); // 8N1
+ 218:	86 e0       	ldi	r24, 0x06	; 6
+ 21a:	80 93 c2 00 	sts	0x00C2, r24	; 0x8000c2 <__TEXT_REGION_LENGTH__+0x7f80c2>
+ 21e:	08 95       	ret
+
+Disassembly of section .text.UART_sendChar:
+
+00000236 <UART_sendChar>:
+}
+
+void UART_sendChar(char data) {
+	while (!(UCSR0A & (1 << UDRE0)));  // esperar buffer libre
+ 236:	90 91 c0 00 	lds	r25, 0x00C0	; 0x8000c0 <__TEXT_REGION_LENGTH__+0x7f80c0>
+ 23a:	95 ff       	sbrs	r25, 5
+ 23c:	fc cf       	rjmp	.-8      	; 0x236 <UART_sendChar>
+	UDR0 = data;
+ 23e:	80 93 c6 00 	sts	0x00C6, r24	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7f80c6>
+ 242:	08 95       	ret
+
+Disassembly of section .text.__dummy_fini:
+
+0000024c <_fini>:
+ 24c:	08 95       	ret
+
+Disassembly of section .text.__dummy_funcs_on_exit:
+
+0000024e <__funcs_on_exit>:
+ 24e:	08 95       	ret
+
+Disassembly of section .text.__dummy_simulator_exit:
+
+00000250 <__simulator_exit>:
+ 250:	08 95       	ret
+
+Disassembly of section .text.exit:
+
+00000220 <exit>:
+ 220:	ec 01       	movw	r28, r24
+ 222:	0e 94 27 01 	call	0x24e	; 0x24e <__funcs_on_exit>
+ 226:	0e 94 26 01 	call	0x24c	; 0x24c <_fini>
+ 22a:	ce 01       	movw	r24, r28
+ 22c:	0e 94 28 01 	call	0x250	; 0x250 <__simulator_exit>
+ 230:	ce 01       	movw	r24, r28
+ 232:	0e 94 24 01 	call	0x248	; 0x248 <_Exit>
+
+Disassembly of section .text._Exit:
+
+00000248 <_Exit>:
+ 248:	0e 94 62 00 	call	0xc4	; 0xc4 <_exit>
